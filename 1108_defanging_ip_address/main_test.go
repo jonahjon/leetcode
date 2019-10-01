@@ -13,13 +13,13 @@ var tcs = []struct {
 }{
 
 	{
-		"Hello",
-		"hello",
+		"1.1.1.1",
+		"1[.]1[.]1[.]1",
 	},
 
 	{
-		"Yolo",
-		"yolo",
+		"255.100.50.0",
+		"255[.]100[.]50[.]0",
 	},
 }
 
@@ -28,6 +28,6 @@ func Test_numJewelsInStones(t *testing.T) {
 
 	for _, tc := range tcs {
 		fmt.Printf("~~%v~~\n", tc)
-		ast.Equal(tc.ans, ToLowerCase(tc.str), "输入:%v", tc)
+		ast.Equal(tc.ans, DefangIPaddr(tc.str), ":%v", tc)
 	}
 }

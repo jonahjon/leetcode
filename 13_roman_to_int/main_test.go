@@ -7,31 +7,35 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// Test Cases
 var tcs = []struct {
-	J   string
-	S   string
+	str string
 	ans int
 }{
 
 	{
-		"aA",
-		"aAAbbbb",
+		"III",
 		3,
 	},
 
 	{
-		"z",
-		"ZZ",
-		0,
+		"IV",
+		4,
+	},
+	{
+		"IX",
+		9,
+	},
+	{
+		"LVIII",
+		58,
 	},
 }
 
-func Test_numJewelsInStones(t *testing.T) {
+func Test_RomanToInt(t *testing.T) {
 	ast := assert.New(t)
 
 	for _, tc := range tcs {
 		fmt.Printf("~~%v~~\n", tc)
-		ast.Equal(tc.ans, NumJewelsInStones(tc.J, tc.S), "输入:%v", tc)
+		ast.Equal(tc.ans, RomanToInt(tc.str), ":%d", tc)
 	}
 }
